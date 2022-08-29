@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onpreeya srisai 6230301067</title>
+</head>
+
+<body>
+    <button onclick="showMenu()">Click to Show Product</button>
+</body>
+
+<script>
+
+    var check = true;
+    const id1 = {id:1,name:'item1',price:500,img:'clothes/1.jpg',style:'width:100px'}
+    const id2 = {id:2,name:'item2',price:500,img:'clothes/2.jpg',style:'width:100px'}
+    const id3 = {id:3,name:'item3',price:500,img:'clothes/3.jpg',style:'width:100px'}
+    const id4 = {id:4,name:'item4',price:500,img:'clothes/4.jpg',style:'width:100px'}
+    const id5 = {id:5,name:'item5',price:500,img:'clothes/5.jpg',style:'width:100px'}
+    const id6 = {id:6,name:'item6',price:500,img:'clothes/6.jpg',style:'width:100px'}
+    const id7 = {id:7,name:'item7',price:500,img:'clothes/7.jpg',style:'width:100px'}
+    const id8 = {id:8,name:'item8',price:500,img:'clothes/8.jpg',style:'width:100px'}
+    const id9 = {id:9,name:'item9',price:500,img:'clothes/9.jpg',style:'width:100px'}
+    const id10 = {id:10,name:'Shí yíng zǐ',price:1150,img:'clothes/10.jpg',style:'width:100px'}
+
+    const arr_menu = [id1,id2,id3,id4,id5,id6,id7,id8,id9,id10]
+    
+    function showMenu(){
+        if(check)
+        {
+            const Div = document.createElement("div");
+            Div.setAttribute("id","mydiv");
+            document.body.appendChild(Div);
+            arr_menu.forEach(myFunction);
+            check = false;
+
+        }else{
+            const element = document.getElementById('mydiv')
+            element.remove();
+            check = true;
+
+        }
+    }
+
+    function myFunction(value) {
+    
+        var img = document.createElement("img");
+        var p = document.createElement("p");
+        var hr = document.createElement("hr");
+        var p_de = document.createTextNode("รายการที่ : "+value.id + " ชื่อ " + value.name + " ราคา " + value.price)
+        p.appendChild(p_de)
+        img.src =  value.img
+        img.width = 500
+        document.getElementById("mydiv").appendChild(p)
+        document.getElementById("mydiv").appendChild(img)
+        document.getElementById("mydiv").appendChild(hr)
+
+    }
+
+</script>
+</html>
